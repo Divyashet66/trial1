@@ -28,7 +28,7 @@ steps:
   - 'push'
   - 'gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA'
 
-- name: gcr.io/$PROJECT_ID/cloudbuild-attestor
+- name: gcr.io/$PROJECT_ID/my-binauthz-attestor
   id: 'Check Vulnerability Scan results'
   entrypoint: 'sh'
   args:
@@ -37,7 +37,7 @@ steps:
   - |
      /scripts/check_vulnerabilities.sh -p $PROJECT_ID -i gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA -t 5
 
-- name: 'gcr.io/$PROJECT_ID/cloudbuild-attestor'
+- name: 'gcr.io/$PROJECT_ID/my-binauthz-attestor'
   id: 'Attest Vulnerability Scan'
   entrypoint: 'sh'
   args:

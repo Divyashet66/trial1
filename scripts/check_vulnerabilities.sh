@@ -33,6 +33,10 @@ Options:
   -h                   This help screen"
 }
 
+PROJECT_ID="tech-rnd-project" ;
+IMAGE_PATH="gcr.io/tech-rnd-project/hello-world:latest" ;
+THRESHOLD="2" ;
+
 while getopts 'hp:i:t:' flag; do
   case ${flag} in
     h) usage ;;

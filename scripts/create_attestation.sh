@@ -55,6 +55,16 @@ KMS options:
 "
 }
 
+PROJECT_ID="tech-rnd-project" ;
+IMAGE_PATH="gcr.io/tech-rnd-project/hello-world:latest;
+ATTESTOR="my-binauthz-attestor;
+ATTESTOR_PROJECT="tech-rnd-project" ;
+KMS_KEY_VERSION="1" ;
+KMS_KEY="codelab-key" ;
+KMS_LOCATION="global" ;
+KMS_KEYRING="binauthz-keys" ;
+KMS_PROJECT="tech-rnd-project" ;
+
 while getopts 'p:i:a:A:v:k:l:r:V:h' flag; do
   case ${flag} in
     p) PROJECT_ID="${OPTARG}" ;;

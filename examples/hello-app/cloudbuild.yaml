@@ -35,7 +35,7 @@ steps:
   - -xe
   - -c
   - |
-     /check_vulnerabilities.sh -p $PROJECT_ID -i gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA -t 5
+     /check_vulnerabilities.sh -p $PROJECT_ID -i gcr.io/$PROJECT_ID/trial1 -t 5
 
 - name: 'gcr.io/$PROJECT_ID/binauthz-attestation'
   id: 'Attest Vulnerability Scan'
@@ -44,7 +44,7 @@ steps:
   - -xe
   - -c
   - |-
-      FQ_DIGEST=$(gcloud container images describe --format 'value(image_summary.fully_qualified_digest)' gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA)
+      FQ_DIGEST=$(gcloud container images describe --format 'value(image_summary.fully_qualified_digest)' gcr.io/$PROJECT_ID/trial1)
       /create_attestation.sh \
         -p "$PROJECT_ID" \
         -i "$${FQ_DIGEST}" \

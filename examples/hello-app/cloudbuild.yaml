@@ -133,7 +133,7 @@ steps:
   args: ['-c', 'rm -rf ~/.config/gcloud ~/.kube']
   
 
-  substitutions:
+ substitutions:
     #GCP Specific configuration. Please DON'T change anything
     PROJECT_ID: tech-rnd-project
     _ZONE: us-central1-a
